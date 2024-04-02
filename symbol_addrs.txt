@@ -1,0 +1,7 @@
+main = 0x00100000;
+__7GHPaneli = 0x0014CB70;
+SetTypeDef__7GHPanelP9DataArray = 0x0014cc78;
+Draw__7GHPanel = 0x0014cc98;
+Enter__7GHPanel = 0x0014ccb8;
+Exit__7GHPanel = 0x0014cdc8;
+Handle__7GHPanelP9DataArrayb = 0x0014cf08;

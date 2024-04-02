@@ -1,0 +1,42 @@
+name: Guitar Hero II (Debug)
+sha1: 29624b902a43aac5afcfcc5fa44675aafb0a10ab
+options:
+  basename: gh2dbg.elf
+  target_path: gh2dbg.elf
+  base_path: .
+  compiler: GCC
+  find_file_boundaries: False
+  platform: ps2
+  create_undefined_funcs_auto: True
+  undefined_funcs_auto_path: undefined_funcs_auto.txt
+  create_undefined_syms_auto: True
+  undefined_syms_auto_path: undefined_syms_auto.txt
+  symbol_addrs_path: symbol_addrs.txt
+  asm_path: asm
+  src_path: src
+  build_path: build
+  extensions_path: tools/splat_ext
+  section_order: [".text", ".data", ".rodata", ".bss"]
+  auto_all_sections: [".data",".rodata", ".bss"]
+  subalign: 8
+  disasm_unknown: True
+  named_regs_for_c_funcs: False
+segments:
+  - [0, databin, elf_header]
+  - name: main
+    type: code
+    start: 0x1000
+    vram: 0x00100000
+    bss_size: 0xD29AB
+    subsegments:
+        - [0x1000, c, main]
+        - [0x04DB70, c, gh2/ui/GHPanel]
+        - [0x04E010, asm, rest]
+        - [0x338100, bin, vutext]
+        - [0x340980, data]
+        - [0x35BA80, rodata]
+        - type: bss
+          start: 0x3EC900
+          vram: 0x4EB900
+
+  - [0x4BF300]

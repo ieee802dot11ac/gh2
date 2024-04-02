@@ -1,0 +1,11 @@
+# splat folders
+asm/
+assets/
+
+# splat files
+*.ld
+*_auto.txt
+
+# originals (!!!)
+gh2dbg.elf
+SLUS_214.47
